@@ -7,6 +7,8 @@ uses
 
   type
 
+  TNotifyEvent = procedure (Sender : TObject) of Object;
+
   TspQuery = class(TFDQuery)
 
   private
@@ -19,26 +21,30 @@ uses
     procedure SetspTabelas(const Value: TStringList);
     procedure SetspCondicoes(const Value: TStringList);
     procedure SetStatus(const Value: TNotifyEvent);
+
+
+  Public
+   Function GeraSQL:TstringList;
+   procedure OnStatus;
+
   published
-   procedure GeraSQL;
    property spColunas: TStringList read FspColunas write SetspColunas;
    property spTabelas: TStringList read FspTabelas write SetspTabelas;
    property spCondicoes: TStringList read FspCondicoes write SetspCondicoes;
-   property Status: TNotifyEvent read FStatus write SetStatus;
+   property Status : TNotifyEvent read FStatus write SetStatus;
   end;
 
 implementation
 
 { TspQuery }
 
-procedure TspQuery.GeraSQL;
+Function TspQuery.GeraSQL:TstringList;
   var campos, Script : String;
   i: Integer;
   SqlQuery :TStringList;
 begin
   SqlQuery := TStringList.Create;
   try
-   {Retirando vírgula}
    for i := 0 to spColunas.Count -1 do
    campos := campos + spColunas.Strings[i]+ ',';
 
@@ -51,9 +57,17 @@ begin
     SqlQuery.Add(Script);
     SQL := SqlQuery;
   finally
+    Result := SqlQuery;
+    OnStatus;
     SqlQuery.Free;
   end;
 
+end;
+
+procedure TspQuery.OnStatus;
+begin
+ if Assigned(Status) then
+  Status(Self);
 end;
 
 procedure TspQuery.SetspColunas(const Value: TStringList);

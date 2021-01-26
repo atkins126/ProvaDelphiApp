@@ -1,4 +1,4 @@
-package spComponentes;
+package spComponente;
 
 {$R *.res}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
@@ -35,7 +35,8 @@ requires
   FireDACCommon;
 
 contains
-  uspQuery in 'ProvaDelphiApp\uspQuery.pas';
+  uspQuery in 'uspQuery.pas';
 
 end.
+
 

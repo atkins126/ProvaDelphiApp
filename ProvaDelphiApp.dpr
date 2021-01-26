@@ -16,7 +16,9 @@ uses
   uOperacoesEmLote_Calculos_Controller in 'Controller\uOperacoesEmLote_Calculos_Controller.pas',
   uOperacoesEmLote_Calculos_Interface in 'Controller\uOperacoesEmLote_Calculos_Interface.pas',
   uFTarefa2 in 'View\uFTarefa2.pas' {fTarefa2},
-  uspQuery in 'Componentes\uspQuery.pas';
+  uspQuery in 'Componentes\uspQuery.pas',
+  uGeraSQL_Interface in 'Controller\uGeraSQL_Interface.pas',
+  uGeraSQL_Controller in 'Controller\uGeraSQL_Controller.pas';
 
 {$R *.res}
 

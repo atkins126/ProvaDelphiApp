@@ -34,7 +34,7 @@ requires
   FireDAC,
   FireDACCommonDriver,
   FireDACCommon,
-  spComponentes;
+  spComponente;
 
 contains
   uspComponentesRegistro in 'uspComponentesRegistro.pas';

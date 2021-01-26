@@ -1,0 +1,18 @@
+unit uGeraSQL_Interface;
+
+interface
+uses system.classes;
+
+Type
+ iController_GeraSQL = interface
+   ['{D0533657-882F-4092-84B5-DD1444F5C8B9}']
+   function SetColunas(Colunas: TStringList):iController_GeraSQL;
+   function SetTabela(Tabela: TStringList):iController_GeraSQL;
+   function SetCondicao(Condicao: TStringList):iController_GeraSQL;
+   function GeraSQL : String;
+ end;
+
+
+implementation
+
+end.

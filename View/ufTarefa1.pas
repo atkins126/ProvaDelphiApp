@@ -9,13 +9,13 @@ uses
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Stan.ExprFuncs,
-  FireDAC.Phys.SQLiteDef, FireDAC.Phys, FireDAC.Phys.SQLite;
+  FireDAC.Phys.SQLiteDef, FireDAC.Phys, FireDAC.Phys.SQLite,
+  uGeraSQL_Controller;
 
 type
   TfTarefa1 = class(TForm)
     mColunas: TMemo;
     mTabelas: TMemo;
-    mCondicoes: TMemo;
     mSqlGerado: TMemo;
     lblslqgerado: TLabel;
     btnGerarSql: TButton;
@@ -23,8 +23,7 @@ type
     Label2: TLabel;
     Label3: TLabel;
     btnLimpar: TButton;
-    spQuery1: TspQuery;
-    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
+    mCondicoes: TMemo;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnGerarSqlClick(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);
@@ -56,42 +55,22 @@ begin
 end;
 
 procedure TfTarefa1.ChamaGerador;
-var
-  Colunas: TStringList;
-  Tabelas: TStringList;
-  Condicoes: TStringList;
-  i: Integer;
+ Var SQL : string;
 begin
   mSqlGerado.Clear;
-  Colunas := TStringList.create;
-  Tabelas := TStringList.create;
-  Condicoes := TStringList.create;
 
-  try
-    for i := 0 to mColunas.Lines.Count - 1 do
-    Colunas.Add(mColunas.Lines.Strings[i]);
+  SQL := TController_GeraSQL.New
+                            .SetColunas(mColunas)
+                            .SetTabela(mTabelas)
+                            .SetCondicao(mCondicoes)
+                            .GeraSQL;
 
-    Tabelas.Add(mTabelas.Lines.Text);
-    Condicoes.Add(mCondicoes.Lines.Text);
-
-    spQuery1.spColunas   := Colunas;
-    spQuery1.spTabelas   := Tabelas;
-    spQuery1.spCondicoes := Condicoes;
-    spQuery1.GeraSQL;
-
-    mSqlGerado.Lines.Add(spQuery1.SQL.Strings[0]);
-
-  finally
-   FreeAndNil(Colunas);
-   FreeAndNil(Tabelas);
-   FreeAndNil(Condicoes);
-  end;
-
+  mSqlGerado.Lines.Add(SQL);
 end;
 
 procedure TfTarefa1.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
- FreeAndNil(fTarefa1);
+  FreeAndNil(fTarefa1);
 end;
 
 end.

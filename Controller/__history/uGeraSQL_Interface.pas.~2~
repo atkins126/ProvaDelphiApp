@@ -1,0 +1,13 @@
+unit uGeraSQL_Interface;
+
+interface
+Type
+ iController_GeraSQL = interface
+   ['{D0533657-882F-4092-84B5-DD1444F5C8B9}']
+   function GeraSQL : iController_GeraSQL;
+ end;
+
+
+implementation
+
+end.

@@ -59,13 +59,6 @@ object fTarefa1: TfTarefa1
     Height = 97
     TabOrder = 1
   end
-  object mCondicoes: TMemo
-    Left = 361
-    Top = 37
-    Width = 161
-    Height = 97
-    TabOrder = 2
-  end
   object mSqlGerado: TMemo
     AlignWithMargins = True
     Left = 8
@@ -76,7 +69,7 @@ object fTarefa1: TfTarefa1
     Margins.Right = 8
     Margins.Bottom = 15
     Align = alBottom
-    TabOrder = 3
+    TabOrder = 2
   end
   object btnGerarSql: TButton
     Left = 542
@@ -84,7 +77,7 @@ object fTarefa1: TfTarefa1
     Width = 81
     Height = 40
     Caption = 'Gerar SQL'
-    TabOrder = 4
+    TabOrder = 3
     OnClick = btnGerarSqlClick
   end
   object btnLimpar: TButton
@@ -93,15 +86,14 @@ object fTarefa1: TfTarefa1
     Width = 81
     Height = 40
     Caption = 'Limpar'
-    TabOrder = 5
+    TabOrder = 4
     OnClick = btnLimparClick
   end
-  object spQuery1: TspQuery
-    Left = 384
-    Top = 152
-  end
-  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
-    Left = 296
-    Top = 152
+  object mCondicoes: TMemo
+    Left = 361
+    Top = 37
+    Width = 161
+    Height = 97
+    TabOrder = 5
   end
 end
