@@ -6,10 +6,10 @@
         <Projects Include="ProvaDelphiApp.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="spComponentes.dproj">
+        <Projects Include="Componentes\spComponentes.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="spComponentesDT.dproj">
+        <Projects Include="Componentes\spComponentesDT.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -30,22 +30,22 @@
         <MSBuild Projects="ProvaDelphiApp.dproj" Targets="Make"/>
     </Target>
     <Target Name="spComponentes">
-        <MSBuild Projects="spComponentes.dproj"/>
+        <MSBuild Projects="Componentes\spComponentes.dproj"/>
     </Target>
     <Target Name="spComponentes:Clean">
-        <MSBuild Projects="spComponentes.dproj" Targets="Clean"/>
+        <MSBuild Projects="Componentes\spComponentes.dproj" Targets="Clean"/>
     </Target>
     <Target Name="spComponentes:Make">
-        <MSBuild Projects="spComponentes.dproj" Targets="Make"/>
+        <MSBuild Projects="Componentes\spComponentes.dproj" Targets="Make"/>
     </Target>
     <Target Name="spComponentesDT">
-        <MSBuild Projects="spComponentesDT.dproj"/>
+        <MSBuild Projects="Componentes\spComponentesDT.dproj"/>
     </Target>
     <Target Name="spComponentesDT:Clean">
-        <MSBuild Projects="spComponentesDT.dproj" Targets="Clean"/>
+        <MSBuild Projects="Componentes\spComponentesDT.dproj" Targets="Clean"/>
     </Target>
     <Target Name="spComponentesDT:Make">
-        <MSBuild Projects="spComponentesDT.dproj" Targets="Make"/>
+        <MSBuild Projects="Componentes\spComponentesDT.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="ProvaDelphiApp;spComponentes;spComponentesDT"/>
