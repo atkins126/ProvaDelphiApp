@@ -3,7 +3,7 @@ unit uOperacoesEmLote_Model;
 interface
 
 uses uOperacoesEmLote_Interface, Datasnap.DBClient, Data.DB, System.SysUtils,
-  ufTarefa3, Vcl.Forms;
+  ufTarefa3;
 
 type
   TModel_OperacoesEmlote = class(TInterfacedObject, iModel_OperacoesEmLote)
@@ -46,7 +46,6 @@ function TModel_OperacoesEmlote.PopulateDataSet: String;
 var
   i, Valor: integer;
 begin
-
   fTarefa3.FDataSet    := CreateDataSet;
   fTarefa3.FDataSource := CreateDataSource;
 

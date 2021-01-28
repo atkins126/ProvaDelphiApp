@@ -25,6 +25,7 @@ type
     procedure btnTotalDivisoesClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     procedure LoadGrid;
 
@@ -78,6 +79,11 @@ begin
  FreeAndNIl(FDatasource);
  FreeAndNIl(FDataset);
  FreeAndNil(fTarefa3);
+end;
+
+procedure TfTarefa3.FormCreate(Sender: TObject);
+begin
+// LoadGrid; {Desabilitado por enquanto, erro ao carregar por aqui}
 end;
 
 procedure TfTarefa3.LoadGrid;
