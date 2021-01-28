@@ -1,15 +1,13 @@
 unit uOperacoesEmLote_DataSet_Controller;
 
 interface
-uses uOperacoesEmLote_DataSet_Intertface, Data.DB;
+uses uOperacoesEmLote_DataSet_Intertface, Data.DB, Vcl.Forms;
 
  Type
   TController_OperacoesEmLote = class(TinterfacedObject, iController_OperacoesEmlote)
-   public
-   destructor Destroy; override;
 
    class function New :iController_OperacoesEmlote;
-   function PopulateDataSet : TDataSource;
+   function PopulateDataSet : String;
   end;
 
 implementation
@@ -19,20 +17,16 @@ uses
 
 { TController_OperacoesEmLote }
 
-destructor TController_OperacoesEmLote.Destroy;
-begin
-
-  inherited;
-end;
-
 class function TController_OperacoesEmLote.New: iController_OperacoesEmlote;
 begin
   Result := Self.Create;
 end;
 
-function TController_OperacoesEmLote.PopulateDataSet: TDataSource;
+function TController_OperacoesEmLote.PopulateDataSet: String;
 begin
   Result := TModel_OperacoesEmlote.New
                                   .PopulateDataSet;
+
 end;
+
 end.

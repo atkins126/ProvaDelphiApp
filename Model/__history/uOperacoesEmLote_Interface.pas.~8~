@@ -8,6 +8,7 @@ uses
 type
  iModel_OperacoesEmLote = interface
    ['{49E494F1-96C4-4C1E-A708-83F399DE4FD0}']
+   function SetForm(Formulario:TForm):iModel_OperacoesEmLote;
    function PopulateDataSet : String;
  end;
 

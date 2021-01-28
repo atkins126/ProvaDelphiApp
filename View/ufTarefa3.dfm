@@ -16,7 +16,6 @@ object fTarefa3: TfTarefa3
   Visible = True
   WindowState = wsMaximized
   OnClose = FormClose
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -64,6 +63,15 @@ object fTarefa3: TfTarefa3
       EditLabel.Height = 13
       EditLabel.Caption = 'Total divis'#245'es R$'
       TabOrder = 3
+    end
+    object Button1: TButton
+      Left = 160
+      Top = 32
+      Width = 75
+      Height = 25
+      Caption = 'Button1'
+      TabOrder = 4
+      OnClick = Button1Click
     end
   end
   object DBGrid1: TDBGrid

@@ -8,6 +8,9 @@ uses uOperacoesEmLote_Interface, Datasnap.DBClient, Data.DB, System.SysUtils,
 type
   TModel_OperacoesEmlote = class(TInterfacedObject, iModel_OperacoesEmLote)
   public
+    Constructor Create;
+    Destructor Destroy; override;
+
     class function New: iModel_OperacoesEmLote;
     function PopulateDataSet: String;
 

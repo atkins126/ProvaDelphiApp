@@ -8,7 +8,15 @@ uses uOperacoesEmLote_Interface, Datasnap.DBClient, Data.DB, System.SysUtils,
 type
   TModel_OperacoesEmlote = class(TInterfacedObject, iModel_OperacoesEmLote)
   public
+    FDataSet: TClientDataSet;
+    FDataSource: TDataSource;
+    FForm : TForm;
+
+    Constructor Create;
+    Destructor Destroy; override;
+
     class function New: iModel_OperacoesEmLote;
+    function SetForm(Formulario:TForm):iModel_OperacoesEmLote;
     function PopulateDataSet: String;
 
     function CreateDataSet: TClientDataSet;
@@ -26,6 +34,17 @@ uses
 function TModel_OperacoesEmlote.CreateDataSource: TDataSource;
 begin
   Result:= TDataSource.Create(nil);
+end;
+
+constructor TModel_OperacoesEmlote.Create;
+begin
+
+end;
+
+destructor TModel_OperacoesEmlote.Destroy;
+begin
+
+  inherited;
 end;
 
 function TModel_OperacoesEmlote.CreateDataSet: TClientDataSet;

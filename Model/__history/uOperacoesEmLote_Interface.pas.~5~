@@ -3,7 +3,7 @@ unit uOperacoesEmLote_Interface;
 interface
 
 uses
-  Data.DB, Vcl.Forms;
+  Data.DB;
 
 type
  iModel_OperacoesEmLote = interface
