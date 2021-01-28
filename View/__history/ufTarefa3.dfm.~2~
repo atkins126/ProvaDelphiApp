@@ -38,7 +38,7 @@ object fTarefa3: TfTarefa3
     end
     object btnTotalDivisoes: TButton
       Left = 304
-      Top = 73
+      Top = 57
       Width = 153
       Height = 29
       Caption = 'Obter Total Divis'#245'es'
@@ -47,7 +47,7 @@ object fTarefa3: TfTarefa3
     end
     object btnTotal: TButton
       Left = 304
-      Top = 40
+      Top = 21
       Width = 153
       Height = 30
       Caption = 'Obter Total'
@@ -65,10 +65,10 @@ object fTarefa3: TfTarefa3
       TabOrder = 3
     end
     object Button1: TButton
-      Left = 304
-      Top = 6
-      Width = 153
-      Height = 30
+      Left = 104
+      Top = 48
+      Width = 75
+      Height = 25
       Caption = 'Carregar Dados'
       TabOrder = 4
       OnClick = Button1Click
