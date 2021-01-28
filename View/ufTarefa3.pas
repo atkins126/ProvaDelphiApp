@@ -83,7 +83,8 @@ end;
 
 procedure TfTarefa3.FormCreate(Sender: TObject);
 begin
-// LoadGrid; {Desabilitado por enquanto, erro ao carregar por aqui}
+  if Assigned(fTarefa3) then
+    LoadGrid; {Desabilitado por enquanto, erro ao carregar por aqui}
 end;
 
 procedure TfTarefa3.LoadGrid;
