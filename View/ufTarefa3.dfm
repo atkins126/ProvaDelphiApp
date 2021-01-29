@@ -16,7 +16,6 @@ object fTarefa3: TfTarefa3
   Visible = True
   WindowState = wsMaximized
   OnClose = FormClose
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -39,7 +38,7 @@ object fTarefa3: TfTarefa3
     end
     object btnTotalDivisoes: TButton
       Left = 304
-      Top = 73
+      Top = 60
       Width = 153
       Height = 29
       Caption = 'Obter Total Divis'#245'es'
@@ -48,7 +47,7 @@ object fTarefa3: TfTarefa3
     end
     object btnTotal: TButton
       Left = 304
-      Top = 40
+      Top = 24
       Width = 153
       Height = 30
       Caption = 'Obter Total'
@@ -64,15 +63,6 @@ object fTarefa3: TfTarefa3
       EditLabel.Height = 13
       EditLabel.Caption = 'Total divis'#245'es R$'
       TabOrder = 3
-    end
-    object Button1: TButton
-      Left = 304
-      Top = 6
-      Width = 153
-      Height = 30
-      Caption = 'Carregar Dados'
-      TabOrder = 4
-      OnClick = Button1Click
     end
   end
   object DBGrid1: TDBGrid

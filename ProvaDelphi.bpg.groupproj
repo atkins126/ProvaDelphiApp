@@ -9,8 +9,8 @@
         <Projects Include="Componentes\spComponente.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Componentes\spComponentesDT.dproj">
-            <Dependencies/>
+        <Projects Include="Componentes\spComponenteDT.dproj">
+            <Dependencies>Componentes\spComponente.dproj</Dependencies>
         </Projects>
     </ItemGroup>
     <ProjectExtensions>
@@ -38,23 +38,23 @@
     <Target Name="spComponente:Make">
         <MSBuild Projects="Componentes\spComponente.dproj" Targets="Make"/>
     </Target>
-    <Target Name="spComponentesDT">
-        <MSBuild Projects="Componentes\spComponentesDT.dproj"/>
+    <Target Name="spComponenteDT" DependsOnTargets="spComponente">
+        <MSBuild Projects="Componentes\spComponenteDT.dproj"/>
     </Target>
-    <Target Name="spComponentesDT:Clean">
-        <MSBuild Projects="Componentes\spComponentesDT.dproj" Targets="Clean"/>
+    <Target Name="spComponenteDT:Clean" DependsOnTargets="spComponente:Clean">
+        <MSBuild Projects="Componentes\spComponenteDT.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="spComponentesDT:Make">
-        <MSBuild Projects="Componentes\spComponentesDT.dproj" Targets="Make"/>
+    <Target Name="spComponenteDT:Make" DependsOnTargets="spComponente:Make">
+        <MSBuild Projects="Componentes\spComponenteDT.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="ProvaDelphiApp;spComponente;spComponentesDT"/>
+        <CallTarget Targets="ProvaDelphiApp;spComponente;spComponenteDT"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ProvaDelphiApp:Clean;spComponente:Clean;spComponentesDT:Clean"/>
+        <CallTarget Targets="ProvaDelphiApp:Clean;spComponente:Clean;spComponenteDT:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ProvaDelphiApp:Make;spComponente:Make;spComponentesDT:Make"/>
+        <CallTarget Targets="ProvaDelphiApp:Make;spComponente:Make;spComponenteDT:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

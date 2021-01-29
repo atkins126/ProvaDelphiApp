@@ -3,7 +3,7 @@ unit uspQuery;
 interface
 
 uses
-  System.Classes, FireDAC.Comp.Client;
+  System.Classes, FireDAC.Comp.Client, FireDac.DApt;
 
   type
 
@@ -21,7 +21,6 @@ uses
     procedure SetspTabelas(const Value: TStringList);
     procedure SetspCondicoes(const Value: TStringList);
     procedure SetStatus(const Value: TNotifyEvent);
-
 
   Public
    Function GeraSQL:TstringList;
@@ -48,7 +47,6 @@ begin
    for i := 0 to spColunas.Count -1 do
    campos := campos + spColunas.Strings[i]+ ',';
 
-   {Montando Script}
    Script := ' Select ' +#13+
               Copy(campos,1,(length(campos)-1))+
              ' From '+spTabelas.Text+''+ #13+

@@ -27,7 +27,7 @@ uses Vcl.StdCtrls;
 
 procedure TThreadObject.Execute;
 var
-  i, Tempo: integer;
+  i, Tempo: Int64;
 begin
   inherited;
 
@@ -36,14 +36,11 @@ begin
 
   for i := 0 to 100 do
   begin
-    sleep(random(Tempo));
+    sleep(Tempo);
 
     fTarefa2.FProgressBar[FThreadIndex].Progress := i;
-    fTarefa2.Gauge1.Progress := i;
     Application.ProcessMessages;
   end;
-
-  fTarefa2.FProgressBar[FThreadIndex].Progress := 0;
 
 end;
 

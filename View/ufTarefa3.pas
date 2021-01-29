@@ -19,20 +19,15 @@ type
     btnTotal: TButton;
     EdtTotalDivisao: TLabeledEdit;
     DBGrid1: TDBGrid;
-    Button1: TButton;
 
     procedure btnTotalClick(Sender: TObject);
     procedure btnTotalDivisoesClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure Button1Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
-  private
-    procedure LoadGrid;
 
     public
     FDatasource : TDatasource;
     FDataSet    : TCLientDataset;
-
+    procedure LoadGrid;
 
     { Public declarations }
   end;
@@ -69,22 +64,11 @@ begin
   EdtTotalDivisao.Text := FormatFloat('0.00', Total);
 end;
 
-procedure TfTarefa3.Button1Click(Sender: TObject);
-begin
-  LoadGrid;
-end;
-
 procedure TfTarefa3.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
  FreeAndNIl(FDatasource);
  FreeAndNIl(FDataset);
  FreeAndNil(fTarefa3);
-end;
-
-procedure TfTarefa3.FormCreate(Sender: TObject);
-begin
-  if Assigned(fTarefa3) then
-    LoadGrid; {Desabilitado por enquanto, erro ao carregar por aqui}
 end;
 
 procedure TfTarefa3.LoadGrid;
@@ -94,7 +78,7 @@ begin
 
   TFloatField(FDataSet.FieldByName('Valor')).DisplayFormat := 'R$###,###,##0.00';
 
-  DBGrid1.DataSource  := FDatasource;
+  DBGrid1.DataSource := FDatasource;
 end;
 
 end.

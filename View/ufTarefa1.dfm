@@ -69,7 +69,7 @@ object fTarefa1: TfTarefa1
     Margins.Right = 8
     Margins.Bottom = 15
     Align = alBottom
-    TabOrder = 2
+    TabOrder = 4
   end
   object btnGerarSql: TButton
     Left = 542
@@ -86,7 +86,7 @@ object fTarefa1: TfTarefa1
     Width = 81
     Height = 40
     Caption = 'Limpar'
-    TabOrder = 4
+    TabOrder = 5
     OnClick = btnLimparClick
   end
   object mCondicoes: TMemo
@@ -94,6 +94,10 @@ object fTarefa1: TfTarefa1
     Top = 37
     Width = 161
     Height = 97
-    TabOrder = 5
+    TabOrder = 2
+  end
+  object FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink
+    Left = 568
+    Top = 128
   end
 end

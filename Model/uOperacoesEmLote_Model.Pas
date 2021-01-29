@@ -3,14 +3,14 @@ unit uOperacoesEmLote_Model;
 interface
 
 uses uOperacoesEmLote_Interface, Datasnap.DBClient, Data.DB, System.SysUtils,
-  ufTarefa3;
+  ufTarefa3, Vcl.Forms;
 
 type
   TModel_OperacoesEmlote = class(TInterfacedObject, iModel_OperacoesEmLote)
   public
+    FForm :TForm;
     class function New: iModel_OperacoesEmLote;
     function PopulateDataSet: String;
-
     function CreateDataSet: TClientDataSet;
     function CreateDataSource :TDataSource;
 
@@ -53,13 +53,14 @@ begin
 
   for i := 1 to 10 do
   begin
-    fTarefa3.FDataSet.Append;
-    fTarefa3.FDataSet.FieldByName('IdProjeto').AsInteger  := i;
-    fTarefa3.FDataSet.FieldByName('NomeProjeto').AsString := 'Projeto ' + i.ToString;
-    fTarefa3.FDataSet.FieldByName('Valor').AsFloat        := Valor;
-    fTarefa3.FDataSet.Post;
 
-    Valor := Valor + 10;
+   fTarefa3.FDataSet.Append;
+   fTarefa3.FDataSet.FieldByName('IdProjeto').AsInteger  := i;
+   fTarefa3.FDataSet.FieldByName('NomeProjeto').AsString := 'Projeto ' + i.ToString;
+   fTarefa3.FDataSet.FieldByName('Valor').AsFloat        := Valor;
+   fTarefa3.FDataSet.Post;
+
+   Valor := Valor + 10;
   end;
 
   fTarefa3.FDataSource.DataSet := fTarefa3.FDataSet;

@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{04AE9EA1-EFF2-45B9-87D7-4BEDC4F1DE93}</ProjectGuid>
-        <MainSource>spComponentesDT.dpk</MainSource>
+        <MainSource>spComponenteDT.dpk</MainSource>
         <ProjectVersion>18.8</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
@@ -52,7 +52,7 @@
         <GenPackage>true</GenPackage>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
-        <SanitizedProjectName>spComponentesDT</SanitizedProjectName>
+        <SanitizedProjectName>spComponenteDT</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -127,7 +127,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp260.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
-                    <Source Name="MainSource">spComponentesDT.dpk</Source>
+                    <Source Name="MainSource">spComponenteDT.dpk</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment Version="3">
@@ -146,9 +146,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="bin\spComponentesDT.bpl" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="bin\spComponenteDT.bpl" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>spComponentesDT.bpl</RemoteName>
+                        <RemoteName>spComponenteDT.bpl</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

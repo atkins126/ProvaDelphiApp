@@ -72,5 +72,4 @@ initialization
   MyException := TException.Create;
 finalization
   MyException.Free;
-
 end.

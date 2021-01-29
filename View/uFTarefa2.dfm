@@ -57,7 +57,7 @@ object fTarefa2: TfTarefa2
     Align = alBottom
     ForeColor = clSkyBlue
     Progress = 0
-    ExplicitTop = 184
+    ExplicitLeft = 4
   end
   object Gauge2: TGauge
     AlignWithMargins = True
@@ -70,8 +70,7 @@ object fTarefa2: TfTarefa2
     Align = alBottom
     ForeColor = clSkyBlue
     Progress = 0
-    ExplicitLeft = 17
-    ExplicitTop = 273
+    ExplicitLeft = 4
   end
   object btnprocessar: TButton
     Left = 282
@@ -80,7 +79,7 @@ object fTarefa2: TfTarefa2
     Height = 25
     Anchors = []
     Caption = 'Processar'
-    TabOrder = 0
+    TabOrder = 2
     OnClick = btnprocessarClick
   end
   object edtTime2: TEdit
@@ -97,6 +96,6 @@ object fTarefa2: TfTarefa2
     Width = 100
     Height = 21
     Anchors = []
-    TabOrder = 2
+    TabOrder = 0
   end
 end

@@ -6,10 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ToolWin, Vcl.ActnMan, Vcl.ActnCtrls,
   Vcl.ActnMenus, Vcl.Menus, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
-  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
-  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, Vcl.StdCtrls;
+  Vcl.StdCtrls, Vcl.FileCtrl;
 
 type
   TfMain = class(TForm)
@@ -21,6 +18,7 @@ type
     Image1: TImage;
     Opcoes: TMenuItem;
     sair: TMenuItem;
+    Label1: TLabel;
     procedure tarefa2Click(Sender: TObject);
     procedure tarefa1Click(Sender: TObject);
 
@@ -67,7 +65,7 @@ end;
 
 procedure TfMain.sairClick(Sender: TObject);
 begin
- Close;
+  Close;
 end;
 
 procedure TfMain.tarefa1Click(Sender: TObject);
@@ -79,7 +77,7 @@ begin
 end;
 
 procedure TfMain.tarefa2Click(Sender: TObject);
-begin
+begin;
   if fcFormExists(fTarefa2 as TForm) then
      fTarefa2.Show
   else
@@ -93,6 +91,8 @@ begin
      fTarefa3.Show
   else
      fTarefa3 := TfTarefa3.Create(Self);
+
+  fTarefa3.LoadGrid;
 end;
 
 end.

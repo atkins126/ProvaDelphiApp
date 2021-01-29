@@ -3,14 +3,11 @@ unit ufTarefa1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uspQuery,
-  FireDAC.Stan.Intf, FireDAC.Stan.Option,
-  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
-  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Stan.ExprFuncs,
-  FireDAC.Phys.SQLiteDef, FireDAC.Phys, FireDAC.Phys.SQLite,
-  uGeraSQL_Controller;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uspQuery,
+  uGeraSQL_Controller, FireDAC.Phys.MySQLDef, FireDAC.Stan.Intf,
+  FireDAC.Phys, FireDAC.Phys.MySQL, FireDAC.Phys.MSAccDef,
+  FireDAC.Phys.ODBCBase, FireDAC.Phys.MSAcc;
 
 type
   TfTarefa1 = class(TForm)
@@ -24,6 +21,7 @@ type
     Label3: TLabel;
     btnLimpar: TButton;
     mCondicoes: TMemo;
+    FDPhysMSAccessDriverLink1: TFDPhysMSAccessDriverLink;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnGerarSqlClick(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);

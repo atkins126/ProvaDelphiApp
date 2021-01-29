@@ -91,13 +91,18 @@ begin
   aTask := TTask.Create(
   procedure
   begin
+
    TParallel.For(0, 1,
     procedure(ThreadIndex: Integer)
     begin
-      TController_CallProcess.New.SetThreadIndex(ThreadIndex).SetProcess;
+      TController_CallProcess.New
+                             .SetThreadIndex(ThreadIndex)
+                             .SetProcess;
     end);
 
     ShowMessage('Processo concluído!');
+    Gauge1.Progress := 0;
+    Gauge2.Progress := 0;
     FProcessed := True;
   end);
   aTask.Start;

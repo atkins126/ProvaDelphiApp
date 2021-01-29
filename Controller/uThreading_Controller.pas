@@ -3,7 +3,7 @@ unit uThreading_Controller;
 interface
 
 uses uThreading_Interface, System.Classes, Vcl.Forms, System.SysUtils,
-  Vcl.ComCtrls;
+  Vcl.ComCtrls, uFTarefa2;
 
 Type
   TController_CallProcess = class(TInterfacedObject, iController_Threading)
@@ -46,6 +46,7 @@ begin
   finally
     FreeAndNil(MyThread);
   end;
+
 end;
 
 function TController_CallProcess.SetThreadIndex(

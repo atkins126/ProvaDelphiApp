@@ -3,7 +3,7 @@ object fMain: TfMain
   Top = 0
   Caption = 'Prova Delphi App'
   ClientHeight = 359
-  ClientWidth = 649
+  ClientWidth = 648
   Color = clBtnFace
   Constraints.MaxHeight = 418
   Constraints.MaxWidth = 665
@@ -22,7 +22,7 @@ object fMain: TfMain
     AlignWithMargins = True
     Left = 70
     Top = 3
-    Width = 576
+    Width = 575
     Height = 353
     Margins.Left = 70
     Align = alClient
@@ -520,6 +520,13 @@ object fMain: TfMain
     Stretch = True
     ExplicitLeft = 65
     ExplicitTop = -2
+  end
+  object Label1: TLabel
+    Left = 472
+    Top = 216
+    Width = 109
+    Height = 13
+    Caption = 'Prova de Werik Santos'
   end
   object MainMenu1: TMainMenu
     Left = 40
